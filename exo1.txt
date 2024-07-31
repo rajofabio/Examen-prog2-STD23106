@@ -1,0 +1,27 @@
+1) L'annotation @Override indique au compilateur qu'une méthode donnée est la redéfinition d'une méthode de la superclasse.
+
+2)On a besoin de redéfinir equals et  hashCode lorsque nous surchargeons la méthode equals (), il est recommandé de surcharger également la méthode hashCode (). Si nous ne le faisons pas, des objets égaux peuvent avoir des valeurs de hachage différentes; et les collections basées sur le hachage, et aussi HashMap, HashSet et Hashtable ne fonctionnent pas correctement.
+
+3)Le polymorphisme statique est un concept de la programmation orientée objet où la méthode à exécuter est déterminée au moment de la compilation plutôt qu'à l'exécution.
+exemple :
+public class Calculatrice {
+    public int additionner(int a, int b) {
+        return a + b;
+    }
+
+    public int additionner(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public double additionner(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Calculatrice calc = new Calculatrice();
+
+        System.out.print("Addition de deux entiers : " + calc.additionner(3, 4));
+        System.out.print("Addition de trois entiers : " + calc.additionner(1, 2, 3)); 
+        System.out.print("Addition de deux doubles : " + calc.additionner(2.5, 3.5)); 
+    }
+}
